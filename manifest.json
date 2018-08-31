@@ -1,0 +1,29 @@
+
+{
+  "manifest_version": 2,
+  "name": "NoCrostini (BETA)",
+  "short_name": "NoCrostini",
+"description": "A Linux VM for devices that are unable to support crostini, or just want to use linux.",
+  "version": "1.0",
+  "minimum_chrome_version": "38",
+  "offline_enabled": true,
+  "icons": {
+     "64": "assets/icon-128.png"
+  },
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+   "permissions": [
+    "webview"
+  ],
+  "webview": {
+    "partitions": [
+      {
+        "name": "good_trusted",
+        "accessible_resources": ["linux.html","*"]
+      }
+    ]
+  }
+}
